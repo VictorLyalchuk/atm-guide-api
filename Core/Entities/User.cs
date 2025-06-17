@@ -6,6 +6,9 @@ namespace Core.Entities
 {
     public class User : IdentityUser
     {
+        [MaxLength(20, ErrorMessage = "Login can't be longer than 20 characters")]
+        public string Login { get; set; } = string.Empty;
+
         [MaxLength(20, ErrorMessage = "Fisrt Name can't be longer than 20 characters")]
         public string FirstName { get; set; } = string.Empty;
 
