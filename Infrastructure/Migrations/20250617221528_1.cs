@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class _1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -209,7 +209,6 @@ namespace Infrastructure.Migrations
                     Discriminator = table.Column<string>(type: "character varying(13)", maxLength: 13, nullable: false),
                     FirstName = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true),
                     LastName = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true),
-                    Password = table.Column<string>(type: "text", nullable: true),
                     ImagePath = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: true),
                     RegionId = table.Column<int>(type: "integer", nullable: true),
                     BankId = table.Column<int>(type: "integer", nullable: true),

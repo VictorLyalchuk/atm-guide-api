@@ -6,18 +6,11 @@ namespace Core.Entities
 {
     public class User : IdentityUser
     {
-        [MaxLength(20, ErrorMessage = "Login can't be longer than 20 characters")]
-        public string Login { get; set; } = string.Empty;
-
         [MaxLength(20, ErrorMessage = "Fisrt Name can't be longer than 20 characters")]
         public string FirstName { get; set; } = string.Empty;
 
         [MaxLength(20, ErrorMessage = "Last Name can't be longer than 20 characters")]
         public string LastName { get; set; } = string.Empty;
-
-        [Required(ErrorMessage = "Password is required")]
-        [MinLength(6, ErrorMessage = "Password can't be at least than 6 characters")]
-        public string Password { get; set; } = string.Empty;
 
         [MaxLength(250, ErrorMessage = "Name can't be longer than 250 characters")]
         public string ImagePath { get; set; } = string.Empty;

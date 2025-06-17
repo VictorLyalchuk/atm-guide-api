@@ -47,7 +47,7 @@ namespace Infrastructure.Initializers
                         PhoneNumberConfirmed = true,
                     };
 
-                    IdentityResult adminResult = userManager.CreateAsync(admin, "Qwerty-7").Result;
+                    IdentityResult adminResult = userManager.CreateAsync(admin, "SomePassword123!").Result;
                     if (adminResult.Succeeded)
                     {
                         userManager.AddToRoleAsync(admin, "Administrator").Wait();
