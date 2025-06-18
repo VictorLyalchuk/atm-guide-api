@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace Core.Services
 {
@@ -122,6 +123,55 @@ namespace Core.Services
             }
             var userDto = _mapper.Map<UserDTO>(user);
             return new AccountResultDTO { Success = true, User = userDto };
+        }
+
+        public async Task<string> Login(UserLoginDTO loginDTO)
+        {
+            if (loginDTO == null || string.IsNullOrWhiteSpace(loginDTO.Email) || string.IsNullOrWhiteSpace(loginDTO.Password))
+                return "Login or password cannot be null";
+            return "Not implemented";
+        }
+
+        public async Task<string> RefreshTokenAsync(string oldToken)
+        {
+            if (string.IsNullOrWhiteSpace(oldToken))
+                return "Old token is required";
+            return "Not implemented";
+        }
+
+        public async Task<List<UserDTO>> UsersByPageAsync(int page)
+        {
+            return new List<UserDTO>();
+        }
+
+        public async Task<int> UserQuantity()
+        {
+            return 0;
+        }
+
+        public async Task CreateUserAsync(UserCreateDTO userCreateDTO)
+        {
+            if (userCreateDTO == null)
+                throw new ArgumentNullException(nameof(userCreateDTO));
+        }
+
+        public async Task EditUserAsync(UserEditDTO userEditDTO)
+        {
+            if (userEditDTO == null)
+                throw new ArgumentNullException(nameof(userEditDTO));
+        }
+
+        public async Task DeleteUserByIDAsync(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+                throw new ArgumentNullException(nameof(id));
+        }
+
+        public async Task<UserDTO> GetUserByIdAsync(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+                throw new ArgumentNullException(nameof(id));
+            return null;
         }
     }
 } 
