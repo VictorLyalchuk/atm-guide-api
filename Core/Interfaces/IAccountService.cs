@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Core.Entities.DTOs;
+using Core.DTOs;
 
 namespace Core.Interfaces
 {
@@ -14,5 +14,6 @@ namespace Core.Interfaces
         Task EditUserAsync(UserEditDTO userEditDTO);
         Task DeleteUserByIDAsync(string id);
         Task<UserDTO> GetUserByIdAsync(string id);
+        Task Registration(UserRegistrationDTO registrationDTO);
     }
 }
