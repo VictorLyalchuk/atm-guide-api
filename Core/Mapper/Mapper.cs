@@ -4,9 +4,10 @@
     {
         public Mapper()
         {
-
-
-
+            CreateMap<UserLoginDTO, User>();
+            CreateMap<UserDTO, User>().ReverseMap();
+            CreateMap<UserEditDTO, User>().ReverseMap();
+            CreateMap<UserRegistrationDTO, User>().ReverseMap();
         }
     }
 }
