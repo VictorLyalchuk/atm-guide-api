@@ -1,4 +1,8 @@
-﻿namespace Core.Mapper
+﻿using Core.DTOs;
+using Core.Entities;
+using Core.Entities.DTOs;
+
+namespace Core.Mapper
 {
     public class Mapper : AutoMapper.Profile
     {
