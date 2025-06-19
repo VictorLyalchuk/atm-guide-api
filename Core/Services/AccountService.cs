@@ -1,13 +1,10 @@
-using System.Threading.Tasks;
 using Core.DTOs;
 using Core.Entities;
 using Core.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System;
+using Core.Entities.DTOs;
 
 namespace Core.Services
 {
@@ -172,6 +169,16 @@ namespace Core.Services
             if (string.IsNullOrWhiteSpace(id))
                 throw new ArgumentNullException(nameof(id));
             return null;
+        }
+
+        public Task<List<UserDTO>> UsersyByPageAsync(int page)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> UsersQuantity()
+        {
+            throw new NotImplementedException();
         }
     }
 } 
