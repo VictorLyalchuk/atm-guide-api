@@ -6,7 +6,7 @@ using WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
-string connection = builder.Configuration.GetConnectionString("ConnectionPostgresRender") ?? throw new InvalidOperationException("Connection string 'ConnectionPostgresRender' not found.");
+string connection = builder.Configuration.GetConnectionString("ConnectionPostgresLocal") ?? throw new InvalidOperationException("Connection string 'ConnectionPostgresRender' not found.");
 
 builder.Services.AddDBContext(connection);
 
