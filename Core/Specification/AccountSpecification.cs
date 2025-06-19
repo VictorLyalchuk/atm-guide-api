@@ -1,16 +1,10 @@
 ﻿using Core.Entities;
-using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Core.Specification
 {
     public static class AccountSpecification
     {
-        public static IQueryable<User>UserByPage(this IQueryable<User> query, int page)
+        public static IQueryable<User> UsersByPage(this IQueryable<User> query, int page)
         {
             if(page<1)
             {

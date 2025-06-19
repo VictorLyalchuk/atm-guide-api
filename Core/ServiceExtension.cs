@@ -1,4 +1,6 @@
-﻿using FluentValidation;
+﻿using Core.Interfaces;
+using Core.Services;
+using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,7 +10,8 @@ namespace Core
     {
         public static void AddCustomService(this IServiceCollection service)
         {
-            //service.AddScoped<IAccountService, AccountService>();
+            service.AddScoped<IAccountService, AccountService>();
+            service.AddScoped<ITokenService, TokenService>();
         }
         public static void AddValidator(this IServiceCollection service)
         {
