@@ -1,3 +1,5 @@
+using Core.Entities.DTOs;
+
 namespace Core.DTOs
 {
     public class AccountResultDTO
