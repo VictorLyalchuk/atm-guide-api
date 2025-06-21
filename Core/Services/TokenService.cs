@@ -1,4 +1,4 @@
-﻿using Core.DTOs;
+﻿using Core.DTOs.User;
 using Core.Entities;
 using Core.Helpers;
 using Core.Interfaces;
@@ -89,17 +89,13 @@ namespace Core.Services
                 new Claim("Email", user.Email),
                 new Claim("FirstName", user.FirstName),
                 new Claim("LastName", user.LastName),
-                new Claim("Role", role!),
+                new Claim("Roles", role!),
 
                 new Claim("Id", user.Id),
 
                 //new Claim("BankName", BankName),
                 //new Claim("RegionName", RegionName),
             };
-            if (!string.IsNullOrEmpty(user.ImagePath))
-            {
-                claimsList.Add(new Claim("ImagePath", user.ImagePath));
-            }
 
             if (!string.IsNullOrEmpty(user.PhoneNumber))
             {

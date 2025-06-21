@@ -15,8 +15,6 @@ namespace Core.Entities
         [MaxLength(300, ErrorMessage = "Message can't be longer than 300 characters")]
         public string Message { get; set; } = string.Empty;
 
-        public string Image { get; set; } = string.Empty;
-
         public DateTime Time { get; set; }
 
         // Навігація до ATM Model

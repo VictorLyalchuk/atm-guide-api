@@ -68,7 +68,7 @@ namespace WebApi
                     ValidIssuer = configuration["Jwt:Issuer"],
                     ValidAudience = configuration["Jwt:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]!)),
-                    RoleClaimType = "Role"
+                    RoleClaimType = "Roles"
                 };
             });
             service.AddAuthorization(options =>

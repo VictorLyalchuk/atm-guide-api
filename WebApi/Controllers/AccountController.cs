@@ -1,5 +1,4 @@
-﻿using Core.Entities;
-using Core.Entities.DTOs;
+﻿using Core.DTOs.User;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +10,12 @@ namespace WebApi.Controllers
     public class AccountController : Controller
     {
         private readonly IAccountService _accountService;
+        private readonly ITokenService _tokenService;
 
-        public AccountController(IAccountService accountService)
+        public AccountController(IAccountService accountService, ITokenService tokenService)
         {
             _accountService = accountService;
+            _tokenService = tokenService;
         }
         [HttpPost("Login")]
         public async Task<IActionResult> Login(UserLoginDTO loginDTO)
@@ -86,7 +87,7 @@ namespace WebApi.Controllers
             {
                 return BadRequest(new { errors = user!.Errors });
             }
-            return Ok(user.User);
+            return Ok(user);
         }
 
         [HttpGet("UsersByPage/{page}")]
@@ -100,5 +101,15 @@ namespace WebApi.Controllers
             }
             return Ok(users);
         }
+
+        [HttpPut("refresh-token")]
+        public async Task<IActionResult> RefreshTokenAsync([FromBody] RefreshTokenDTO refreshToken)
+        {
+            var result = await _tokenService.RefreshTokenAsync(refreshToken.Token);
+            if (!result.Success)
+                return BadRequest(new { errors = result.Errors });
+            return Ok(new { token = result.Token });
+        }
+
     }
 }
