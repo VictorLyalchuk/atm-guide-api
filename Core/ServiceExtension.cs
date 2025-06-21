@@ -12,6 +12,9 @@ namespace Core
         {
             service.AddScoped<IAccountService, AccountService>();
             service.AddScoped<ITokenService, TokenService>();
+            service.AddScoped<IEmailService, EmailService>();
+            service.AddScoped<IBankService, BankService>();
+            service.AddScoped<IRegionService, RegionService>();
         }
         public static void AddValidator(this IServiceCollection service)
         {

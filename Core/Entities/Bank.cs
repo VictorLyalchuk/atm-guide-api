@@ -9,7 +9,7 @@ namespace Core.Entities
 
         [Required(ErrorMessage = "Name is required")]
         [MaxLength(100, ErrorMessage = "Name can't be longer than 100 characters")]
-        public string? Name { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
 
         [Phone]
         [MaxLength(20, ErrorMessage = "Name can't be longer than 20 characters")]

@@ -1,5 +1,4 @@
-﻿using Core.DTOs;
-using Core.Entities.DTOs;
+﻿using Core.DTOs.User;
 
 namespace Core.Interfaces
 {
